@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'each_view.dart';
+import 'popup_window.dart';
 
 class PlusMenuDemo extends StatefulWidget {
   @override
@@ -21,10 +22,17 @@ class _PlusMenuDemoState extends State<PlusMenuDemo> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: _eachView[_index],
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog<Null>(
+            context: context,
+            barrierDismissible: false,
+            builder: (BuildContext context) {
+              return new PopDialog();
+            }
+          );
+        },
+        child: Icon(Icons.add),
       ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.centerDocked,

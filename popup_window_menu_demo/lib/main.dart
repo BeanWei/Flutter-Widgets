@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'plus_menu_demo.dart';
+import 'bottom_nav_view.dart';
 
 void main() => runApp(new MyApp());
 
