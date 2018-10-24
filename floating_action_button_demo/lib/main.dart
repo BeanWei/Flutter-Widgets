@@ -165,6 +165,11 @@ class _AnimatedFabState extends State<AnimatedFab> with SingleTickerProviderStat
   }
 
   _onIconClick() {
-    _animationController.reverse();
+    if (_animationController.value == 0) {
+      return null;
+    } else {
+      print("test");
+      _animationController.reverse();
+    }
   }
 }
