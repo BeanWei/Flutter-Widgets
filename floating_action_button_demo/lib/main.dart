@@ -139,6 +139,9 @@ class _AnimatedFabState extends State<AnimatedFab> with SingleTickerProviderStat
 
 
   Widget _buildOption(IconData icon, double angle) {
+    if (_animationController.isDismissed) {
+      return Container();
+    }
     double iconSize = 0.0;
     if (_animationController.value > 0.8) {
       iconSize = 26.0 * (_animationController.value - 0.8) * 5;
@@ -165,11 +168,7 @@ class _AnimatedFabState extends State<AnimatedFab> with SingleTickerProviderStat
   }
 
   _onIconClick() {
-    if (_animationController.value == 0) {
-      return null;
-    } else {
-      print("test");
-      _animationController.reverse();
-    }
+    print("test");
+    _animationController.reverse();
   }
 }
